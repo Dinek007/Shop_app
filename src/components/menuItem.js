@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         fontSize: "1vw",
         color: "black",
         width: "100%",
-        height: "10vh",
+        height: "5vh",
         backgroundColor: "#ccff00",
         borderRadius: "0"
     },
