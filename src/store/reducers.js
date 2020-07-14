@@ -5,7 +5,9 @@ import { ACTIONS } from './consts'
 
 
 const defaultState = {
-
+    menuItemsUsed: ["SPORT", "ELEKTRONIKA", "MEBLE"],
+    menuItemsNoUsed: ["ELEKTRONIKA", "MEBLE"],
+    menuItemsUser: ["ELEKTRONIKA", "MEBLE"]
 }
 
 export const reducer = handleActions({
