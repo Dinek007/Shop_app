@@ -1,6 +1,7 @@
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { ProductItemProps } from "./types";
 
 const useStyles = makeStyles({
     item: {
@@ -15,10 +16,10 @@ const useStyles = makeStyles({
     },
 });
 
-export const MenuItem = ({ text }) => {
+export const ProductItem: React.FC<ProductItemProps> = ({ /*text = '', selectCategory */ }) => {
     const classes = useStyles();
 
     return (
-        <Button className={classes.item} > {text} </Button>
+        <div className={classes.item} > </div>
     )
 }
