@@ -1,22 +1,15 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+
 import { ProductItemProps } from "./types";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
-        marginLeft: "0px",
-        textAlign: "center",
-        fontSize: "1vw",
-        color: "black",
-        width: "100%",
-        height: "5vh",
-        backgroundColor: "#ccff00",
-        borderRadius: "0"
-    },
-});
 
-export const ProductItem: React.FC<ProductItemProps> = ({ /*text = '', selectCategory */ }) => {
+    },
+}));
+
+export const ProductItem: React.FC<ProductItemProps> = () => {
     const classes = useStyles();
 
     return (

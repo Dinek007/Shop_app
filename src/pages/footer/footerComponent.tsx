@@ -4,9 +4,9 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { FooterComponentProps } from "./types";
 import { Typography } from "@material-ui/core";
 
-const useStyles = makeStyles(({ palette }) => createStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     footer: {
-        backgroundColor: "black",
+        backgroundColor: palette.primary.dark,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -14,7 +14,7 @@ const useStyles = makeStyles(({ palette }) => createStyles({
         width: "100%",
         textAlign: "center",
         fontSize: "10px",
-        color: palette.primary.main,
+        color: "white",
     },
     footerLeft: {
     },
