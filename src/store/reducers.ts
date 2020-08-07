@@ -26,11 +26,11 @@ export class ReduxState {
     }
 }
 
-type ReducerPayloadType = PayloadType<Actions>
+type ReducerPayloadType = Partial<PayloadType<Actions>>
 
 const defaultState = { ...new ReduxState() }
 
-export const reducer = handleActions<ReduxState, any>({
+export const reducer = handleActions<ReduxState, ReducerPayloadType>({
     [ACTIONS.SET_CATEGORIES_DATA]: (state, { payload }: Actions['setCategoriesData']) =>
         produce(state, draft => {
             draft.categories.data = payload
