@@ -8,3 +8,7 @@ export type ProductItemProps = {
   selectCategory?: Function;
 }
 
+export type GenderProps = {
+  text?: string;
+  selectCategory?: Function;
+}

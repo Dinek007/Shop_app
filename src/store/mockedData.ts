@@ -109,60 +109,6 @@ export const categoriesData: Categories = [
       }
     ]
   },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
 ]
 
 export const mockedProducts: Products = [
