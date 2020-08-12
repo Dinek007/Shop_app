@@ -1,10 +1,19 @@
 import { Categories } from "../../store/types"
-import { useFetchCategory } from "./menuContainer"
 
 export type MenuComponentProps = {
-  data: Categories; 
+  /**
+    * @description  array of categories to display in menu
+    * @property data
+  */
+  data: Categories;
+  /**
+    * set to true will render a progress bar
+  */
   isLoading: boolean;
-  fetchCategory: (id: number) => void;
+  /**
+    * function to fetch products data after choosing a category
+  */
+  fetchCategory: (id: number, name: string) => void;
 }
 
 export type MenuContainerProps = {}
