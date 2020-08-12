@@ -109,86 +109,144 @@ export const categoriesData: Categories = [
       }
     ]
   },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: "MUSIC",
-    categories: [
-      {
-        id: 4,
-        name: "ALBUMY",
-      },
-      {
-        id: 5,
-        name: "SŁUCHAWKI",
-      },
-      {
-        id: 6,
-        name: "WIBRATORY",
-      }
-    ]
-  },
 ]
 
 export const mockedProducts: Products = [
   {
-    id: 1,
-    categoryId: 1,
-    name: "kupsko_dupsko",
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
   },
   {
     id: 2,
     categoryId: 2,
-    name: "kupsko_cipsko",
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
   },
   {
-    id: 3,
-    categoryId: 4,
-    name: "kupsko_smierdziusko",
-  },
-  {
-    id: 4,
+    id: 2,
     categoryId: 2,
-    name: "siki_dupsko",
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
   },
   {
-    id: 5,
+    id: 2,
     categoryId: 2,
-    name: "siki_cipsko",
-  }
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX DISPLAY",
+    gender: "MEN",
+  },
+
 ]

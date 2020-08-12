@@ -6,16 +6,21 @@ import { MenuContainerProps } from "./types"
 import { ReduxState } from "../../store/reducers"
 import { actions } from "../../store/actions"
 
-export const useFetchCategory = () => {
+export const useFetchProducts = () => {
     const dispatch = useDispatch()
-    return (id: number) => {
-        dispatch(actions.fetchProducts(id))
-    } 
+    return (id: number, name: string) => {
+        const data = {
+            name: name,
+            id: id
+        }
+        dispatch(actions.fetchProducts(data))
+
+    }
 }
 
 export const MenuContainer: React.FC<MenuContainerProps> = () => {
     const dispatch = useDispatch()
-    const fetchCategory = useFetchCategory()
+    const fetchCategory = useFetchProducts()
 
     useEffect(() => {
         dispatch(actions.fetchCategoriesData(123))
@@ -25,9 +30,9 @@ export const MenuContainer: React.FC<MenuContainerProps> = () => {
     const isLoading = useSelector((store: ReduxState) => store.categories.isLoading)
     return (
         <MenuComponent
-            data= {data}
-            isLoading= {isLoading}
-            fetchCategory= {fetchCategory}
+            data={data}
+            isLoading={isLoading}
+            fetchCategory={fetchCategory}
         />
     )
 }
