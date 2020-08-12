@@ -12,9 +12,8 @@ import { theme } from './theme'
 export const App = () => {
     return (
         <ThemeProvider theme={theme}>
-
-            <MenuContainer />
             <HeaderContainer />
+            <MenuContainer />
             <ProductsContainer />
             <FooterContainer />
         </ThemeProvider>

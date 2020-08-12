@@ -1,39 +1,55 @@
 import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { CircularProgress } from "@material-ui/core";
 
 import { ProductsComponentProps } from "./types";
-import { Gender } from '../../components/gender'
+import { ProductItem } from '../../components/productItem'
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
-    gender: {
+    products: {
+        position: "relative",
         display: "flex",
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
-        marginTop: "30px"
-    },
-    title: {
-        fontSize: "130px",
-        position: "absolute",
-        left: "50%",
-        transform: "translate(-50%, 0)",
-        top: "0px",
-        fontFamily: "Arial, Helvetica, sans-serif",
-        color: palette.primary.dark
+        flexWrap: "wrap",
     }
 }));
 
 
-export const ProductsComponent: React.FC<ProductsComponentProps> = () => {
+export const ProductsComponent: React.FC<ProductsComponentProps> = ({
+    data,
+    isLoading,
+}) => {
     const classes = useStyles();
 
     return (
         <div>
-            <p className={classes.title}>CATEGORY </p>
-            <div className={classes.gender}>
+            {
+                isLoading
+                    ? <CircularProgress color='primary' />
+                    : <>
 
-                <Gender></Gender>
-            </div>
+                        <div className={classes.products}>
+                            {(
+                                data.map((item, index) =>
+                                    <div key={index} >
+                                        <ProductItem
+                                            id={item.id}
+                                            categoryId={item.id}
+                                            price={item.price}
+                                            name={item.name}
+                                            condition={item.condition}
+                                            gender={item.gender}
+                                        />
+                                    </div>
+                                )
+                            )}
+                        </div>
+
+                    </>
+            }
         </div>
     )
 }

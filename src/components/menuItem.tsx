@@ -7,12 +7,14 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
         marginLeft: "0px",
         textAlign: "center",
-        color: "black",
+        color: "white",
         width: "100%",
         height: "50px",
         backgroundColor: palette.primary.light,
         borderRadius: "0",
-        fontFamily: "Arial, Helvetica, sans-serif"
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "15px",
+
     },
 }));
 

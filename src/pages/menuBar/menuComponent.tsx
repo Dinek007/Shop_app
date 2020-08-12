@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
@@ -11,12 +11,15 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         backgroundColor: palette.primary.dark,
         position: "relative",
         float: "left",
+        top: "0px",
         width: "150px",
         height: "100%",
+        fontSize: "20px",
+        fontWeight: "bold",
+        zIndex: 3,
         [breakpoints.down('xs')]: {
             width: 100
         },
-        fontFamily: "Arial, Helvetica, sans-serif"
     },
     paragraph: {
         margin: "0px",
@@ -25,10 +28,12 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         color: "black",
         width: "100%",
         height: "40px",
-        paddingTop: "30px",
-        borderBottom: "3px solid black",
-        borderRight: "3px solid black",
-        fontFamily: "Arial, Helvetica, sans-serif"
+        paddingTop: "8px",
+        paddingBottom: "5px",
+        borderBottom: `3px solid ${palette.primary.dark}`,
+        borderRight: `3px solid ${palette.primary.dark}`,
+        fontFamily: "Comic Sans MS",
+        fontSize: "24px"
     }
 }));
 
@@ -47,13 +52,19 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
                     ? <CircularProgress color='secondary' />
                     : (
                         data.map((item, index) =>
+
                             <div key={index}>
                                 <p className={classes.paragraph}> {item.name} </p>
                                 {
                                     item.categories.map((item, index) => {
-                                        const selectCategory = () => fetchCategory(item.id)
-
-                                        return <MenuItem key={index} selectCategory={selectCategory} text={item.name} />
+                                        const selectCategory = () => {
+                                            fetchCategory(item.id, item.name)
+                                        }
+                                        return <MenuItem
+                                            key={index}
+                                            selectCategory={selectCategory}
+                                            text={item.name}
+                                        />
                                     }
                                     )
                                 }
