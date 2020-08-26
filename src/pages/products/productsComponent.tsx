@@ -8,12 +8,17 @@ import { ProductItem } from '../../components/productItem'
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     products: {
         position: "relative",
+        top: "118px",
+        left: "40%",
+        transform: "translate(-50%, 0)",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
         flexWrap: "wrap",
+
+        width: "76vw"
     }
 }));
 

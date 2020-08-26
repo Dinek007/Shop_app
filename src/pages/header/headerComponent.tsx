@@ -4,18 +4,18 @@ import HomeIcon from '@material-ui/icons/Home';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 import { HeaderComponentProps } from "./types";
-import { Filter } from "../../components/filter"
+
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     header: {
         position: "relative",
         backgroundColor: palette.secondary.main,
-        height: "300px",
-        borderBottom: `9px solid ${palette.primary.dark}`,
+        borderBottom: `5px solid black`,
+        paddingBottom: "70px",
     },
     title: {
-        backgroundColor: palette.primary.main,
-        position: "absolute",
+        backgroundColor: "black",
+        position: "relative",
         left: "50%",
         width: "1000px",
         transform: "translate(-50%, 0)",
@@ -35,9 +35,10 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         position: "absolute",
         left: "50%",
         transform: "translate(-50%, 0)",
-        top: "15px",
+        top: "208px",
         fontFamily: "Arial, Helvetica, sans-serif",
-        color: palette.primary.dark
+        color: "black",
+        marginBottom: "50px"
     },
     homeIco: {
         fontSize: "60px",
@@ -64,9 +65,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
 
 export const HeaderComponent: React.FC<HeaderComponentProps> = ({
     categoryName,
-    checkboxNames,
-    checkboxs,
-    handleChange
+
 }) => {
     const classes = useStyles();
 
@@ -78,13 +77,9 @@ export const HeaderComponent: React.FC<HeaderComponentProps> = ({
                 <ShoppingCartIcon className={classes.cartIco} />
             </header >
 
-            <p className={classes.category}> {categoryName} </p>
+            <div className={classes.category}> {categoryName} </div>
 
-            <Filter
-                checkboxNames={checkboxNames}
-                checkboxs={checkboxs}
-                handleChange={handleChange}
-            />
+
         </div>
 
 
