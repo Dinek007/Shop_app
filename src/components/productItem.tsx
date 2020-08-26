@@ -3,16 +3,13 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { ProductItemProps } from "./types";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
-
     item: {
         float: "left",
         position: "relative",
         width: "550px",
         height: "280px",
         boxShadow: '2px 2px 9px 2px rgba(51, 102, 204, .7)',
-        marginTop: "95px",
-        marginLeft: "95px",
-        marginRight: "95px",
+        margin: "30px"
     },
     itemPic: {
         width: "200px",

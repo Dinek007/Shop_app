@@ -14,12 +14,17 @@ export type Products = Array<
   Record<'id' | 'categoryId' | 'price', number> &
   {
     name: string;
-    condition: 'NEW' | 'USED' | 'EX DISPLAY';
-    gender: 'MEN' | 'WOMEN';
+    condition: 'NEW' | 'USED' | 'EX-DISPLAY';
+    gender: 'MEN' | 'WOMAN';
   }
 >
 
-export type checkboxNames = Record<'Woman' | 'Men' | 'New' | 'Used' | 'ExDisplay', boolean>
+export type CheckboxNames = Record<'WOMAN' | 'MEN' | 'NEW' | 'USED' | 'EX-DISPLAY', boolean>
+
+export type FilterProductsPayload = {
+  value: boolean;
+  fieldName: keyof CheckboxNames;
+}
 
 
 type ActionsBasicType = {
