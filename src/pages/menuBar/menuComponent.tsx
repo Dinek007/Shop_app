@@ -5,10 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import { MenuItem } from '../../components/menuItem'
 import { MenuComponentProps } from "./types";
 import { CircularProgress } from "@material-ui/core";
+import { Filter } from "../../components/filter"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     menu: {
-        backgroundColor: palette.primary.dark,
+
         position: "relative",
         float: "left",
         top: "0px",
@@ -17,9 +18,15 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         fontSize: "20px",
         fontWeight: "bold",
         zIndex: 3,
-        [breakpoints.down('xs')]: {
-            width: 100
+        [breakpoints.down('sm')]: {
+            width: "115px",
+            fontSize: "15px",
         },
+        [breakpoints.down('xs')]: {
+            width: "80px",
+            fontSize: "10px",
+        },
+        backgroundColor: "black",
     },
     paragraph: {
         margin: "0px",
@@ -27,13 +34,22 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         textAlign: "center",
         color: "black",
         width: "100%",
-        height: "40px",
-        paddingTop: "8px",
+        height: "35px",
+        paddingTop: "13px",
         paddingBottom: "5px",
-        borderBottom: `3px solid ${palette.primary.dark}`,
-        borderRight: `3px solid ${palette.primary.dark}`,
-        fontFamily: "Comic Sans MS",
-        fontSize: "24px"
+        borderBottomRightRadius: "30px",
+        borderBottomLeftRadius: "30px",
+        borderBottom: `3px solid black`,
+
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "24px",
+        [breakpoints.down('sm')]: {
+            fontSize: "19px",
+        },
+        [breakpoints.down('xs')]: {
+            fontSize: "14px",
+            height: "30px",
+        },
     }
 }));
 
@@ -41,12 +57,20 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
 export const MenuComponent: React.FC<MenuComponentProps> = ({
     data,
     isLoading,
-    fetchCategory
+    fetchCategory,
+    checkboxNames,
+    checkboxes,
+    handleChange
 }) => {
     const classes = useStyles();
 
     return (
         <Grid className={classes.menu} >
+            <Filter
+                checkboxNames={checkboxNames}
+                checkboxes={checkboxes}
+                handleChange={handleChange}
+            />
             {
                 isLoading
                     ? <CircularProgress color='secondary' />

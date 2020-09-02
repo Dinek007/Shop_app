@@ -6,7 +6,7 @@ import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     footer: {
-        backgroundColor: palette.primary.dark,
+        backgroundColor: "black",
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -26,7 +26,7 @@ export const FooterComponent: React.FC<FooterComponentProps> = () => {
     return (
         <footer className={classes.footer}>
             <Typography> ADDRESS: Wrzosowa 34, Cracow </Typography>
-            <Typography> 685 489 945, multi.shop@mail.com  </Typography>
+            <Typography> 685 489 945, fashion.mistery@mail.com  </Typography>
         </footer>
     )
 }

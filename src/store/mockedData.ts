@@ -117,7 +117,31 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
+    gender: "WOMAN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX-DISPLAY",
+    gender: "WOMAN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX-DISPLAY",
+    gender: "WOMAN",
+  },
+  {
+    id: 2,
+    categoryId: 2,
+    price: 500.99,
+    name: "SUPER BIEGACZE",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -125,7 +149,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -133,7 +157,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -141,7 +165,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -149,7 +173,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -157,7 +181,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -165,7 +189,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -173,7 +197,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -181,7 +205,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -189,7 +213,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -197,7 +221,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -205,7 +229,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -213,7 +237,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
   {
@@ -221,31 +245,7 @@ export const mockedProducts: Products = [
     categoryId: 2,
     price: 500.99,
     name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
-    gender: "MEN",
-  },
-  {
-    id: 2,
-    categoryId: 2,
-    price: 500.99,
-    name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
-    gender: "MEN",
-  },
-  {
-    id: 2,
-    categoryId: 2,
-    price: 500.99,
-    name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
-    gender: "MEN",
-  },
-  {
-    id: 2,
-    categoryId: 2,
-    price: 500.99,
-    name: "SUPER BIEGACZE",
-    condition: "EX DISPLAY",
+    condition: "EX-DISPLAY",
     gender: "MEN",
   },
 

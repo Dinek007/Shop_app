@@ -10,11 +10,17 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         color: "white",
         width: "100%",
         height: "50px",
-        backgroundColor: palette.primary.light,
+        fontWeight: "bold",
         borderRadius: "0",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "15px",
-
+        [breakpoints.down('sm')]: {
+            fontSize: "13px",
+        },
+        [breakpoints.down('xs')]: {
+            fontSize: "10px",
+            height: "45px",
+        },
     },
 }));
 

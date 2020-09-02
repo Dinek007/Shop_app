@@ -1,4 +1,4 @@
-import { Products, checkboxNames } from "../store/types"
+import { Products, CheckboxNames } from "../store/types"
 
 
 export type MenuItemProps = {
@@ -11,8 +11,6 @@ export type ProductItemProps =
 
 export type FilterProps = {
   checkboxNames: string[];
-  checkboxs: checkboxNames;
+  checkboxes: CheckboxNames;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
-
-

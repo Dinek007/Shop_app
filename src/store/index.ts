@@ -6,10 +6,13 @@ import { indexSaga } from './sagas'
 import { reducer } from './reducers'
 
 export const sagaMiddleware = createSagaMiddleware()
+const middleWares = applyMiddleware(sagaMiddleware)
 
 export const configureStore = () => {
     return createStore(
-        reducer, composeWithDevTools(applyMiddleware(sagaMiddleware))
+        reducer, composeWithDevTools(middleWares)
     );
 }
-export const runSaga = () => { sagaMiddleware.run(indexSaga) }
+
+export const store = configureStore()
+sagaMiddleware.run(indexSaga)
