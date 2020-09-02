@@ -18,10 +18,12 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         backgroundColor: "white",
         borderRadius: "20px",
         fontFamily: "Arial, Helvetica, sans-serif",
-    },
-    label: {
-        color: "white",
-        fontSize: "30px"
+        [breakpoints.down('md')]: {
+            width: "150px",
+            height: "223px",
+            borderRadius: "0px",
+        },
+
     },
     formText: {
         top: "8px",
@@ -29,6 +31,10 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         position: "relative",
         left: "30px",
         fontFamily: "Arial, Helvetica, sans-serif",
+        [breakpoints.down('md')]: {
+            left: "8px",
+
+        },
     },
     root: {
         color: palette.secondary.light,

@@ -12,16 +12,21 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
 
         position: "relative",
         float: "left",
-        top: "-3px",
+        top: "0px",
         width: "150px",
         height: "100%",
         fontSize: "20px",
         fontWeight: "bold",
         zIndex: 3,
-        [breakpoints.down('xs')]: {
-            width: 100
+        [breakpoints.down('sm')]: {
+            width: "115px",
+            fontSize: "15px",
         },
-        backgroundColor: palette.primary.light
+        [breakpoints.down('xs')]: {
+            width: "80px",
+            fontSize: "10px",
+        },
+        backgroundColor: "black",
     },
     paragraph: {
         margin: "0px",
@@ -35,9 +40,16 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         borderBottomRightRadius: "30px",
         borderBottomLeftRadius: "30px",
         borderBottom: `3px solid black`,
-        borderTop: `3px solid black`,
+
         fontFamily: "Arial, Helvetica, sans-serif",
-        fontSize: "24px"
+        fontSize: "24px",
+        [breakpoints.down('sm')]: {
+            fontSize: "19px",
+        },
+        [breakpoints.down('xs')]: {
+            fontSize: "14px",
+            height: "30px",
+        },
     }
 }));
 

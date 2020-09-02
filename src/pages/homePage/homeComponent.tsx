@@ -6,8 +6,24 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     homePic: {
         backgroundImage: "url(./walppaper.jpg)",
-        width: "100%",
-        height: "900px"
+        position: "relative",
+
+        height: "900px",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+
+    },
+    button: {
+        borderBottom: `3px solid ${palette.secondary.main}`,
+
+        fontSize: "30px",
+        position: "relative",
+        top: "30px"
+
+    },
+    source: {
+        textDecoration: "none",
+        color: palette.secondary.main,
     }
 }))
 
@@ -17,9 +33,8 @@ export const HomeComponent: React.FC<HomeComponentProps> = () => {
 
     return (
         <div className={classes.homePic}>
-            <Button>
-
-                <a href='/products'>PRODUCTS</a>
+            <Button className={classes.button}>
+                <a href='/products' className={classes.source}>PRODUCTS</a>
             </Button>
         </div>
     )

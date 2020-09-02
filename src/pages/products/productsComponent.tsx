@@ -8,7 +8,7 @@ import { ProductItem } from '../../components/productItem'
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     products: {
         position: "relative",
-        top: "118px",
+        marginTop: "118px",
         left: "40%",
         transform: "translate(-50%, 0)",
         display: "flex",
@@ -17,8 +17,10 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         alignItems: "center",
         alignContent: "center",
         flexWrap: "wrap",
-
-        width: "76vw"
+        width: "76vw",
+        [breakpoints.down('sm')]: {
+            marginTop: "230px",
+        },
     }
 }));
 

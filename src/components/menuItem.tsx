@@ -7,14 +7,20 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
         marginLeft: "0px",
         textAlign: "center",
-        color: "black",
+        color: "white",
         width: "100%",
         height: "50px",
-
+        fontWeight: "bold",
         borderRadius: "0",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "15px",
-
+        [breakpoints.down('sm')]: {
+            fontSize: "13px",
+        },
+        [breakpoints.down('xs')]: {
+            fontSize: "10px",
+            height: "45px",
+        },
     },
 }));
 
