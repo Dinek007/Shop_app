@@ -5,6 +5,8 @@ import {
     Route
 } from "react-router-dom";
 
+import './globalStyles.css'
+
 import { ThemeProvider } from '@material-ui/core'
 
 import { FooterContainer } from "./pages/footer/footerContainer"
@@ -12,6 +14,7 @@ import { HeaderContainer } from "./pages/header/headerContainer"
 import { MenuContainer } from "./pages/menuBar/menuContainer"
 import { ProductsContainer } from "./pages/products/productsContainer"
 import { HomeComponent } from "./pages/homePage/homeComponent"
+import { CartContainer } from "./pages/cart/cartContainer"
 import { theme } from './theme'
 
 const ProductsPage: React.FC = () => <>
@@ -19,9 +22,9 @@ const ProductsPage: React.FC = () => <>
     <ProductsContainer />
 </>
 
-const BinPage: React.FC = () => <>
+const CartPage: React.FC = () => <>
     <MenuContainer />
-    {/* <BinComponent /> */}
+    <CartContainer />
 </>
 
 
@@ -31,15 +34,19 @@ export const App = () => {
             <HeaderContainer />
             <Router>
                 <Switch>
+
                     <Route path="/products">
                         <ProductsPage />
                     </Route>
+
+                    <Route path="/cart">
+                        <CartPage />
+                    </Route>
+
                     <Route path="/">
                         <HomeComponent />
                     </Route>
-                    {/* <Route path="/">
-                        <BinPage />
-                    </Route> */}
+
                 </Switch>
             </Router >
             <FooterContainer />

@@ -4,6 +4,7 @@ import { ProductItemProps } from "./types";
 import Typography from "@material-ui/core/Typography";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { CartButtonItem } from "./cartButtonItem"
+import { CartDelItem } from "./cartDelItem";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
@@ -88,7 +89,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     }
 }));
 
-export const ProductItem: React.FC<ProductItemProps> = (
+export const CartItem: React.FC<ProductItemProps> = (
     {
         id,
         categoryId,
@@ -116,7 +117,7 @@ export const ProductItem: React.FC<ProductItemProps> = (
                     <b className={classes.value}> {price} $ </b>
                 </h4>
             </div>
-            <CartButtonItem
+            <CartDelItem
                 id={id}
                 categoryId={categoryId}
                 price={price}
