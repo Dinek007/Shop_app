@@ -28,7 +28,7 @@ export class ReduxState {
         data: [],
         isLoading: false
     }
-    chosenCategory: ChosenCategory = ""
+    chosenCategory: ChosenCategory = "SELECT CATEGORIES"
     checkboxNames: CheckboxNames = {
         WOMAN: true,
         MEN: true,

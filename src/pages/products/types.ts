@@ -13,7 +13,6 @@ export type ProductsComponentProps = {
   /**
     * name of cliked category
   */
-
 }
 export type ProductsContainerProps = {}
 

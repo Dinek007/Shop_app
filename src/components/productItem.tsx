@@ -1,6 +1,9 @@
 import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { ProductItemProps } from "./types";
+import Typography from "@material-ui/core/Typography";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { CartButtonItem } from "./cartButtonItem"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
@@ -8,23 +11,42 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         position: "relative",
         width: "550px",
         height: "280px",
-        boxShadow: '2px 2px 9px 2px rgba(51, 102, 204, .7)',
-        margin: "30px"
+        boxShadow: `2px 2px 8px 0.8px gray`,
+        margin: "30px",
+        [breakpoints.down('sm')]: {
+            width: "280px",
+            margin: "20px",
+            height: "500px",
+        },
+        [breakpoints.down('xs')]: {
+            marginLeft: "0px",
+            marginRight: "0px",
+            boxShadow: `2px 2px 8px 0.8px white`,
+        },
+
     },
     itemPic: {
         width: "200px",
         height: "200px",
         position: "absolute",
         left: "30px",
-        top: "40px"
+        top: "40px",
+        [breakpoints.down('sm')]: {
+            top: "80px",
+            left: "40px",
+        },
     },
     itemName: {
         position: "absolute",
-        left: "180px",
-        top: "30px",
+        fontStyle: 'italic',
+        left: "220px",
+        top: "25px",
         fontSize: "30px",
         width: "350px",
-        fontFamily: "Arial, Helvetica, sans-serif",
+        [breakpoints.down('sm')]: {
+            left: "-33px",
+        },
+
     },
     list: {
         position: "absolute",
@@ -37,18 +59,32 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         flexDirection: "column",
         alignItems: "felx-start",
         flexWrap: "nowrap",
+        [breakpoints.down('sm')]: {
+            left: "60px",
+            top: "285px",
+        },
     },
     listItem: {
         position: "relative",
         left: "0px",
         textAlign: "start",
         fontSize: "20px",
-        fontFamily: "Arial, Helvetica, sans-serif",
+
     },
     value: {
-        color: palette.secondary.main,
+        color: palette.secondary.dark,
         marginLeft: "9px",
-        fontFamily: "Arial, Helvetica, sans-serif",
+    },
+    iconCart: {
+        width: "40px",
+        height: "40px",
+    },
+    cartButton: {
+        width: "70px",
+        height: "70px",
+        position: "absolute",
+        right: "8px",
+        bottom: "8px",
     }
 }));
 
@@ -60,16 +96,15 @@ export const ProductItem: React.FC<ProductItemProps> = (
         name,
         condition,
         gender,
-
-
     }
 ) => {
     const classes = useStyles();
+    const idSrc = "./produkty/" + categoryId + "/item" + id + ".png"
 
     return (
         <div className={classes.item}>
-            <img src="./item.png" alt="itemPic" className={classes.itemPic} />
-            <div className={classes.itemName}> <i> {name} </i> </div>
+            <img src={idSrc} alt="itemPic" className={classes.itemPic} />
+            <Typography className={classes.itemName}>{name.toUpperCase()}</Typography>
             <div className={classes.list}>
                 <h4 className={classes.listItem}> Condition:
                     <b className={classes.value}> {condition} </b>
@@ -81,6 +116,15 @@ export const ProductItem: React.FC<ProductItemProps> = (
                     <b className={classes.value}> {price} $ </b>
                 </h4>
             </div>
-        </div>
+            <CartButtonItem
+                id={id}
+                categoryId={categoryId}
+                price={price}
+                name={name}
+                condition={condition}
+                gender={gender}
+            />
+
+        </div >
     )
 }

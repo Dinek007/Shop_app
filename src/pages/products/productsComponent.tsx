@@ -5,22 +5,29 @@ import { CircularProgress } from "@material-ui/core";
 import { ProductsComponentProps } from "./types";
 import { ProductItem } from '../../components/productItem'
 
-const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
+const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     products: {
         position: "relative",
-        marginTop: "118px",
-        left: "40%",
-        transform: "translate(-50%, 0)",
+        marginTop: spacing(22),
+
+        left: "50px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
         flexWrap: "wrap",
-        width: "76vw",
+        width: "70vw",
+        marginBottom: spacing(7),
         [breakpoints.down('sm')]: {
             marginTop: "230px",
+
         },
+        [breakpoints.down('xs')]: {
+            left: "-48px",
+
+        },
+
     }
 }));
 
@@ -28,7 +35,8 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
 export const ProductsComponent: React.FC<ProductsComponentProps> = ({
     data,
     isLoading,
-}) => {
+
+}, setLocalStorage) => {
     const classes = useStyles();
 
     return (
@@ -44,11 +52,12 @@ export const ProductsComponent: React.FC<ProductsComponentProps> = ({
                                     <div key={index} >
                                         <ProductItem
                                             id={item.id}
-                                            categoryId={item.id}
+                                            categoryId={item.categoryId}
                                             price={item.price}
                                             name={item.name}
                                             condition={item.condition}
                                             gender={item.gender}
+
                                         />
                                     </div>
                                 )

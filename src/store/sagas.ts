@@ -1,26 +1,50 @@
-import { all, takeLatest, fork, put, takeEvery } from 'redux-saga/effects'
+import { all, takeLatest, fork, put, takeEvery, call } from 'redux-saga/effects'
+import ReduxSagaFirebase from 'redux-saga-firebase'
+
 import { ACTIONS } from './consts'
 import { actions, Actions } from './actions'
 
-import { categoriesData, mockedProducts } from './mockedData'
+import firebase from 'firebase/app'
+import { firebaseApp } from '../firebase'
+import { CategoryData, Categories, Products } from './types'
+
+const reduxSagaFirebase = new ReduxSagaFirebase(firebaseApp)
 
 export function* fetchCategoriesDataSaga({ payload }: Actions['fetchCategoriesData']) {
-  // pobieranie danych z backendu
-  // parsowanie danych i ogolne przygotowywanie
-  console.log('jestem tu')
-  const data = categoriesData
-  yield put(actions.setCategoriesData(data))
+  const categoriesDataSnapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'categories')
+
+  const storage = firebase.storage()
+  console.log(storage)
+  let categoriesData: Categories = []
+
+  categoriesDataSnapshot.forEach(element => {
+    categoriesData = element.data().data
+  })
+
+  yield put(actions.setCategoriesData(categoriesData))
 }
 
+
+
 export function* fetchProductsSaga({ payload }: Actions['fetchProducts']) {
-  const filterProducts = mockedProducts.filter((item) => payload.id === item.categoryId) || []
+  const productsDataSnapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'products')
+
+  let productsData: Products = []
+
+  productsDataSnapshot.forEach(element => {
+    productsData = element.data().data
+  })
+
+  console.log(productsData, payload)
+
+  const filterProducts = productsData.filter((item) => payload.id === item.categoryId) || []
   const data = filterProducts
+
   yield put(actions.setProducts(data))
   yield put(actions.setChosenCategory(payload.name))
 }
 
 function* mainSaga() {
-  console.log('saga dziala albno nie dzial')
 
   yield takeEvery(ACTIONS.FETCH_CATEGORIES_DATA, fetchCategoriesDataSaga)
   yield all([
@@ -30,6 +54,6 @@ function* mainSaga() {
 }
 
 export function* indexSaga() {
-  console.log('saga dziala albno nie dzial')
+
   yield fork(mainSaga)
 }

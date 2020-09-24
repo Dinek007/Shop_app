@@ -7,48 +7,39 @@ import { MenuComponentProps } from "./types";
 import { CircularProgress } from "@material-ui/core";
 import { Filter } from "../../components/filter"
 
-const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
+const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     menu: {
-
         position: "relative",
         float: "left",
         top: "0px",
-        width: "150px",
-        height: "100%",
+        width: "170px",
+        minHeight: "1000px",
         fontSize: "20px",
-        fontWeight: "bold",
+        paddingTop: spacing(6),
         zIndex: 3,
+        height: 100,
         [breakpoints.down('sm')]: {
-            width: "115px",
-            fontSize: "15px",
+            width: "130px"
         },
         [breakpoints.down('xs')]: {
-            width: "80px",
-            fontSize: "10px",
+            width: "100px"
         },
         backgroundColor: "black",
     },
     paragraph: {
         margin: "0px",
-        backgroundColor: "white",
+        backgroundColor: palette.secondary.main,
         textAlign: "center",
+        paddingTop: spacing(1),
         color: "black",
         width: "100%",
+        border: `4px solid black`,
         height: "35px",
-        paddingTop: "13px",
         paddingBottom: "5px",
-        borderBottomRightRadius: "30px",
-        borderBottomLeftRadius: "30px",
         borderBottom: `3px solid black`,
-
-        fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "24px",
-        [breakpoints.down('sm')]: {
-            fontSize: "19px",
-        },
         [breakpoints.down('xs')]: {
-            fontSize: "14px",
-            height: "30px",
+            fontSize: "20px",
         },
     }
 }));
@@ -65,38 +56,42 @@ export const MenuComponent: React.FC<MenuComponentProps> = ({
     const classes = useStyles();
 
     return (
-        <Grid className={classes.menu} >
+        <>
+            <Grid className={classes.menu} >
+
+                {
+                    isLoading
+                        ? <CircularProgress color='secondary' />
+                        : (
+                            data.map((item, index) =>
+
+                                <div key={index}>
+                                    <p className={classes.paragraph}> {item.name} </p>
+                                    {
+                                        item?.categories.map((item, index) => {
+                                            const selectCategory = () => {
+
+                                                fetchCategory(item.id, item.name)
+                                            }
+                                            return <MenuItem
+                                                key={index}
+                                                selectCategory={selectCategory}
+                                                text={item.name}
+                                            />
+                                        }
+                                        )
+                                    }
+                                </div>
+                            )
+                        )
+                }
+
+            </Grid>
             <Filter
                 checkboxNames={checkboxNames}
                 checkboxes={checkboxes}
                 handleChange={handleChange}
             />
-            {
-                isLoading
-                    ? <CircularProgress color='secondary' />
-                    : (
-                        data.map((item, index) =>
-
-                            <div key={index}>
-                                <p className={classes.paragraph}> {item.name} </p>
-                                {
-                                    item.categories.map((item, index) => {
-                                        const selectCategory = () => {
-                                            fetchCategory(item.id, item.name)
-                                        }
-                                        return <MenuItem
-                                            key={index}
-                                            selectCategory={selectCategory}
-                                            text={item.name}
-                                        />
-                                    }
-                                    )
-                                }
-                            </div>
-                        )
-                    )
-            }
-
-        </Grid>
+        </>
     )
 }

@@ -5,32 +5,30 @@ import { FilterProps } from "./types";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
+const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     filter: {
         position: "fixed",
-        width: "200px",
+        width: "180px",
         height: "230px",
-        right: "5px",
-        marginTop: "8px",
-        boxShadow: '0px 0px 9px 2px rgba(0, 0, 0, .7)',
+        right: "0px",
+        marginTop: spacing(8),
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "white",
-        borderRadius: "20px",
-        fontFamily: "Arial, Helvetica, sans-serif",
+        backgroundColor: "black",
         [breakpoints.down('md')]: {
             width: "150px",
             height: "223px",
             borderRadius: "0px",
         },
-
+        [breakpoints.down('sm')]: {
+            marginTop: spacing(0),
+        },
     },
     formText: {
         top: "8px",
-        color: "black",
+        color: "white",
         position: "relative",
         left: "30px",
-        fontFamily: "Arial, Helvetica, sans-serif",
         [breakpoints.down('md')]: {
             left: "8px",
 
