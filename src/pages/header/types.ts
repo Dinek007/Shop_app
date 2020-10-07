@@ -1,9 +1,5 @@
-
-
 export type HeaderComponentProps = {
     categoryName: string;
-
-
 }
 
 export type date = {

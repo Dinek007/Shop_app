@@ -4,11 +4,9 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-
-import './globalStyles.css'
-
 import { ThemeProvider } from '@material-ui/core'
 
+import './globalStyles.css'
 import { FooterContainer } from "./pages/footer/footerContainer"
 import { HeaderContainer } from "./pages/header/headerContainer"
 import { MenuContainer } from "./pages/menuBar/menuContainer"
@@ -17,16 +15,15 @@ import { HomeComponent } from "./pages/homePage/homeComponent"
 import { CartContainer } from "./pages/cart/cartContainer"
 import { theme } from './theme'
 
-const ProductsPage: React.FC = () => <>
+const ProductsPage: React.FC = () => <div style={{ display: 'flex' }}>
     <MenuContainer />
     <ProductsContainer />
-</>
+</div>
 
-const CartPage: React.FC = () => <>
+const CartPage: React.FC = () => <div style={{ display: 'flex' }}>
     <MenuContainer />
     <CartContainer />
-</>
-
+</div>
 
 export const App = () => {
     return (

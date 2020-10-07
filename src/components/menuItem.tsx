@@ -1,8 +1,9 @@
 import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { MenuItemProps } from "./types";
 import { useHistory } from "react-router-dom";
+
+import { MenuItemProps } from "./types";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
@@ -23,6 +24,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({ text = '', selectCategory })
         history.push("/products");
         selectCategory()
     }
+
     return (
         <>
             <Button className={classes.item} onClick={onclick as (e: React.MouseEvent) => void} > {text} </Button>

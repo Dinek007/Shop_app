@@ -15,6 +15,7 @@ export type Products = Array<
   {
     name: string;
     condition: 'NEW' | 'USED' | 'EX-DISPLAY';
+    imageUrl?: string,
     gender: 'MEN' | 'WOMAN';
   }
 >
@@ -25,7 +26,6 @@ export type FilterProductsPayload = {
   value: boolean;
   fieldName: keyof CheckboxNames;
 }
-
 
 type ActionsBasicType = {
   [k: string]: ActionFunction1<any, any>;

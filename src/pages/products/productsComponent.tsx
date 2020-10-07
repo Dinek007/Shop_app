@@ -9,7 +9,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
     products: {
         position: "relative",
         marginTop: spacing(22),
-
         left: "50px",
         display: "flex",
         flexDirection: "row",
@@ -21,49 +20,40 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         marginBottom: spacing(7),
         [breakpoints.down('sm')]: {
             marginTop: "230px",
-
+            left: "-8px",
         },
         [breakpoints.down('xs')]: {
-            left: "-48px",
-
+            marginTop: "330px",
+            left: "0px",
         },
-
+    },
+    loading: {
+        position: "absolute",
+        top: "90px"
     }
 }));
-
 
 export const ProductsComponent: React.FC<ProductsComponentProps> = ({
     data,
     isLoading,
-
-}, setLocalStorage) => {
+}) => {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.products}>
             {
                 isLoading
-                    ? <CircularProgress color='primary' />
+                    ? <CircularProgress color='primary' className={classes.loading} />
                     : <>
-
-                        <div className={classes.products}>
+                        <>
                             {(
                                 data.map((item, index) =>
                                     <div key={index} >
-                                        <ProductItem
-                                            id={item.id}
-                                            categoryId={item.categoryId}
-                                            price={item.price}
-                                            name={item.name}
-                                            condition={item.condition}
-                                            gender={item.gender}
-
-                                        />
+                                        <ProductItem {...item} />
                                     </div>
                                 )
                             )}
-                        </div>
-
+                        </>
                     </>
             }
         </div>

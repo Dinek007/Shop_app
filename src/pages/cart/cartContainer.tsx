@@ -19,12 +19,11 @@ const useChangeButton = (categoryName) => {
 
 export const CartContainer: React.FC<CartContainerProps> = () => {
     const dataItems = getLocalStorageItems()
-
     useChangeButton("Cart")
+
     return (
         <CartComponent
             data={dataItems}
-
         />
     )
 }

@@ -3,7 +3,6 @@ import ReduxSagaFirebase from 'redux-saga-firebase'
 
 import { ACTIONS } from './consts'
 import { actions, Actions } from './actions'
-
 import firebase from 'firebase/app'
 import { firebaseApp } from '../firebase'
 import { CategoryData, Categories, Products } from './types'
@@ -24,7 +23,11 @@ export function* fetchCategoriesDataSaga({ payload }: Actions['fetchCategoriesDa
   yield put(actions.setCategoriesData(categoriesData))
 }
 
+function* fetchImage(path: string) {
+  const firebaseStorage = reduxSagaFirebase.storage
 
+  return yield call(firebaseStorage.getDownloadURL, path)
+}
 
 export function* fetchProductsSaga({ payload }: Actions['fetchProducts']) {
   const productsDataSnapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'products')
@@ -38,7 +41,16 @@ export function* fetchProductsSaga({ payload }: Actions['fetchProducts']) {
   console.log(productsData, payload)
 
   const filterProducts = productsData.filter((item) => payload.id === item.categoryId) || []
-  const data = filterProducts
+  let data: Products = []
+
+  for (const element of filterProducts) {
+    data = [
+      ...data, {
+        ...element,
+        imageUrl: yield* fetchImage(`/products/${payload.id}/item${element.id}.png`)
+      }
+    ]
+  }
 
   yield put(actions.setProducts(data))
   yield put(actions.setChosenCategory(payload.name))

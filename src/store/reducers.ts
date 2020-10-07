@@ -17,8 +17,6 @@ type ProductsData = {
 
 type ChosenCategory = string
 
-
-
 export class ReduxState {
     categories: CategoriesData = {
         data: [],
@@ -35,7 +33,6 @@ export class ReduxState {
         'EX-DISPLAY': true,
         NEW: true,
         USED: true,
-
     }
 }
 

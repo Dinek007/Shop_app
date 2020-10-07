@@ -3,10 +3,9 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
-
-import { HeaderComponentProps } from "./types";
 import { Typography } from "@material-ui/core";
 
+import { HeaderComponentProps } from "./types";
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     header: {
@@ -46,10 +45,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
             fontSize: "35px",
         },
         [breakpoints.down('xs')]: {
-            top: spacing(23),
-            width: '20%',
-            left: "43%",
-            fontSize: "20px",
+            top: spacing(43),
+            width: '50%',
+            left: "63%",
+            fontSize: "25px",
         },
     },
     iconContainer: {
@@ -76,7 +75,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
 
 export const HeaderComponent: React.FC<HeaderComponentProps> = ({
     categoryName,
-
 }) => {
     const classes = useStyles();
 
@@ -86,7 +84,6 @@ export const HeaderComponent: React.FC<HeaderComponentProps> = ({
                 <div className={classes.heading}>
                     <EmojiNatureIcon className={classes.iconTitle} />
                     <Typography className={classes.titletext} variant='h4'>FASHION MISTERY</Typography>
-
                 </div>
                 <div className={classes.iconContainer}>
                     <a href="/" className={classes.link}>
@@ -95,12 +92,9 @@ export const HeaderComponent: React.FC<HeaderComponentProps> = ({
                     <a href="/cart" className={classes.link}>
                         <ShoppingCartIcon className={classes.icon} />
                     </a>
-
                 </div>
             </header >
-
             <Typography variant='h2' className={classes.category}> {categoryName.toUpperCase()} </Typography>
-
         </div>
     )
 }
