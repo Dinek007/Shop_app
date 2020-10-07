@@ -33,7 +33,6 @@ export const CartButtonItem: React.FC<CartItemProps> = (item) => {
         console.log(newArray)
     }
 
-
     return (
         <Button onClick={setItemLocalStorage} className={classes.cartButton} >
             <ShoppingCartIcon className={classes.iconCart} />

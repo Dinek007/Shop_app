@@ -8,7 +8,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
     products: {
         position: "relative",
         marginTop: spacing(22),
-
         left: "50px",
         display: "flex",
         flexDirection: "row",
@@ -20,13 +19,13 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         marginBottom: spacing(7),
         [breakpoints.down('sm')]: {
             marginTop: "230px",
-
+            left: "-8px",
         },
         [breakpoints.down('xs')]: {
-            left: "-48px",
+            marginTop: "330px",
+            left: "0px",
 
         },
-
     }
 }));
 
@@ -35,33 +34,23 @@ export const CartComponent: React.FC<CartComponentProps> = (
     data
 ) => {
     const classes = useStyles();
-
     const newData = data.data
-    console.log(newData)
+
     return (
         <div>
             {
-
                 <>
-
                     <div className={classes.products}>
                         {(
                             newData.map((item, index) =>
                                 <div key={index} >
                                     <CartItem
-                                        id={item.id}
-                                        categoryId={item.categoryId}
-                                        price={item.price}
-                                        name={item.name}
-                                        condition={item.condition}
-                                        gender={item.gender}
-
+                                        {...item}
                                     />
                                 </div>
                             )
                         )}
                     </div>
-
                 </>
             }
         </div>
