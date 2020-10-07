@@ -1,6 +1,5 @@
 import { Products, CheckboxNames } from "../store/types"
 
-
 export type MenuItemProps = {
   text?: string;
   selectCategory?: Function;

@@ -39,7 +39,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
     MuiButton: {
       label: {
         fontSize: 18,
-
       }
     }
   }

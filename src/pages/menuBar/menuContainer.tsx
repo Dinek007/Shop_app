@@ -15,7 +15,6 @@ export const useFetchProducts = () => {
             id: id
         }
         dispatch(actions.fetchProducts(data))
-
     }
 }
 
@@ -31,7 +30,6 @@ const checkboxNames = [
 const useCheckBox = () => {
     const dispatch = useDispatch()
 
-    /** filter data function that will trigger after choosing an category */
     return (e: React.ChangeEvent<HTMLInputElement>) => {
         const { target } = e
 
@@ -57,6 +55,7 @@ export const MenuContainer: React.FC<MenuContainerProps> = () => {
     const checkboxes = useSelector((store: ReduxState) => store.checkboxNames)
 
     const filterProducts = useCheckBox()
+
     return (
         <MenuComponent
             data={data}

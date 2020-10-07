@@ -1,8 +1,8 @@
 import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { Typography } from "@material-ui/core";
 
 import { FooterComponentProps } from "./types";
-import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     footer: {
@@ -22,7 +22,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         bottom: 0
     },
 }))
-
 
 export const FooterComponent: React.FC<FooterComponentProps> = () => {
     const classes = useStyles();

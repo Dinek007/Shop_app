@@ -1,9 +1,9 @@
 import React from "react"
-import { makeStyles, createStyles, withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import { FilterProps } from "./types";
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+
+import { FilterProps } from "./types";
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     filter: {
@@ -16,12 +16,15 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         flexDirection: "column",
         backgroundColor: "black",
         [breakpoints.down('md')]: {
-            width: "150px",
+            width: "130px",
             height: "223px",
             borderRadius: "0px",
         },
         [breakpoints.down('sm')]: {
             marginTop: spacing(0),
+        },
+        [breakpoints.down('xs')]: {
+            position: "absolute",
         },
     },
     formText: {
@@ -48,6 +51,7 @@ export const Filter: React.FC<FilterProps> = ({
     handleChange
 }) => {
     const classes = useStyles();
+
     return (
         <div className={classes.filter}>
             {

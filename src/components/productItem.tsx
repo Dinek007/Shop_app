@@ -1,9 +1,9 @@
 import React from "react"
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { ProductItemProps } from "./types";
 import Typography from "@material-ui/core/Typography";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 import { CartButtonItem } from "./cartButtonItem"
+import { ProductItemProps } from "./types";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
@@ -19,11 +19,11 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
             height: "500px",
         },
         [breakpoints.down('xs')]: {
-            marginLeft: "0px",
-            marginRight: "0px",
-            boxShadow: `2px 2px 8px 0.8px white`,
-        },
 
+            width: "200px",
+            margin: "20px",
+            height: "400px",
+        },
     },
     itemPic: {
         width: "200px",
@@ -34,6 +34,10 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         [breakpoints.down('sm')]: {
             top: "80px",
             left: "40px",
+        },
+        [breakpoints.down('xs')]: {
+            width: "130px",
+            height: "130px",
         },
     },
     itemName: {
@@ -46,7 +50,11 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
         [breakpoints.down('sm')]: {
             left: "-33px",
         },
-
+        [breakpoints.down('xs')]: {
+            left: "-3px",
+            fontSize: "22px",
+            width: "200px",
+        },
     },
     list: {
         position: "absolute",
@@ -63,13 +71,20 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
             left: "60px",
             top: "285px",
         },
+        [breakpoints.down('xs')]: {
+            left: "30px",
+            top: "250px",
+            width: "130px",
+        },
     },
     listItem: {
         position: "relative",
         left: "0px",
         textAlign: "start",
         fontSize: "20px",
-
+        [breakpoints.down('xs')]: {
+            fontSize: "10px",
+        },
     },
     value: {
         color: palette.secondary.dark,
@@ -96,14 +111,14 @@ export const ProductItem: React.FC<ProductItemProps> = (
         name,
         condition,
         gender,
+        imageUrl
     }
 ) => {
     const classes = useStyles();
-    const idSrc = "./produkty/" + categoryId + "/item" + id + ".png"
 
     return (
         <div className={classes.item}>
-            <img src={idSrc} alt="itemPic" className={classes.itemPic} />
+            <img src={imageUrl} alt="itemPic" className={classes.itemPic} />
             <Typography className={classes.itemName}>{name.toUpperCase()}</Typography>
             <div className={classes.list}>
                 <h4 className={classes.listItem}> Condition:
@@ -123,8 +138,8 @@ export const ProductItem: React.FC<ProductItemProps> = (
                 name={name}
                 condition={condition}
                 gender={gender}
+                imageUrl={imageUrl}
             />
-
         </div >
     )
 }

@@ -4,7 +4,7 @@ import 'firebase/storage'
 
 import { config } from './firebaseConfig'
 
-const firebaseConfig = config // use your own firebase config
+const firebaseConfig = config
 
 export const firebaseApp = firebase.initializeApp(firebaseConfig)
 export { firebase }
