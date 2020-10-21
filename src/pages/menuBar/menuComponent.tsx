@@ -1,10 +1,10 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import { CircularProgress } from "@material-ui/core";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import { CircularProgress } from "@material-ui/core"
 
 import { MenuItem } from '../../components/menuItem'
-import { MenuComponentProps } from "./types";
+import { MenuComponentProps } from "./types"
 import { Filter } from "../../components/filter"
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
@@ -41,7 +41,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         },
     }
 }));
-
 
 export const MenuComponent: React.FC<MenuComponentProps> = ({
     data,

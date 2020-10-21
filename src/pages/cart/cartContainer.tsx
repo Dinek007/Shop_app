@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { actions } from "../../store/actions"
 
+import { actions } from "../../store/actions"
 import { CartComponent } from "./cartComponent"
 import { CartContainerProps } from "./types"
 
@@ -9,6 +9,7 @@ const getLocalStorageItems = () => {
     const itemsArray = localStorage.items
         ? JSON.parse(localStorage.items)
         : []
+
     return itemsArray
 }
 

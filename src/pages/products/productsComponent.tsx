@@ -1,8 +1,8 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { CircularProgress } from "@material-ui/core";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import { CircularProgress } from "@material-ui/core"
 
-import { ProductsComponentProps } from "./types";
+import { ProductsComponentProps } from "./types"
 import { ProductItem } from '../../components/productItem'
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({

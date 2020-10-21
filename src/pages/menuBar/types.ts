@@ -4,7 +4,6 @@ import { CheckboxNames } from "../../store/types"
 export type MenuComponentProps = {
   data: Categories;
   isLoading: boolean;
-
   fetchCategory: (id: number, name: string) => void;
   checkboxNames: string[];
   checkboxes: CheckboxNames;

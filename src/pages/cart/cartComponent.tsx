@@ -1,7 +1,7 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 
-import { CartComponentProps } from "./types";
+import { CartComponentProps } from "./types"
 import { CartItem } from '../../components/cartItem'
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
@@ -24,7 +24,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         [breakpoints.down('xs')]: {
             marginTop: "330px",
             left: "0px",
-
         },
     }
 }));
@@ -38,21 +37,17 @@ export const CartComponent: React.FC<CartComponentProps> = (
 
     return (
         <div>
-            {
-                <>
-                    <div className={classes.products}>
-                        {(
-                            newData.map((item, index) =>
-                                <div key={index} >
-                                    <CartItem
-                                        {...item}
-                                    />
-                                </div>
-                            )
-                        )}
-                    </div>
-                </>
-            }
+            <div className={classes.products}>
+                {(
+                    newData.map((item, index) =>
+                        <div key={index} >
+                            <CartItem
+                                {...item}
+                            />
+                        </div>
+                    )
+                )}
+            </div>
         </div>
     )
 }

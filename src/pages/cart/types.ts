@@ -1,4 +1,5 @@
 export type CartComponentProps = {
-    data: any
+    data: any;
 }
+
 export type CartContainerProps = {}

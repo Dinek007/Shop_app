@@ -1,9 +1,9 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
 
-import { FilterProps } from "./types";
+import { FilterProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     filter: {
@@ -34,7 +34,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         left: "30px",
         [breakpoints.down('md')]: {
             left: "8px",
-
         },
     },
     root: {
@@ -57,7 +56,7 @@ export const Filter: React.FC<FilterProps> = ({
             {
                 (
                     checkboxNames.map((item, index) => {
-                        console.log(checkboxes[item])
+
                         return (
                             <FormControlLabel className={classes.formText}
                                 control={<Checkbox

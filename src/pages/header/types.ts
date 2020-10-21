@@ -3,8 +3,8 @@ export type HeaderComponentProps = {
 }
 
 export type date = {
-    name: string,
-    checked: boolean
+    name: string;
+    checked: boolean;
 }
 
 export type HeaderContainerProps = {}

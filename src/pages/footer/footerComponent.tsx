@@ -1,8 +1,8 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { Typography } from "@material-ui/core";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import { Typography } from "@material-ui/core"
 
-import { FooterComponentProps } from "./types";
+import { FooterComponentProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     footer: {

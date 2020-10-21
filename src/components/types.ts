@@ -6,9 +6,9 @@ export type MenuItemProps = {
 }
 
 export type ProductItemProps =
-  Products[number]
+  Products[number];
 
-export type CartItemProps = ProductItemProps
+export type CartItemProps = ProductItemProps;
 
 export type FilterProps = {
   checkboxNames: string[];

@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions'
 import produce from 'immer'
 
 import { ACTIONS } from './consts'
-import { Categories, PayloadType, Products, CheckboxNames } from './types'
+import { Categories, Products, CheckboxNames } from './types'
 import { Actions } from './actions'
 
 type CategoriesData = {
@@ -15,7 +15,7 @@ type ProductsData = {
     isLoading: boolean;
 }
 
-type ChosenCategory = string
+type ChosenCategory = string;
 
 export class ReduxState {
     categories: CategoriesData = {
@@ -35,8 +35,6 @@ export class ReduxState {
         USED: true,
     }
 }
-
-type ReducerPayloadType = Partial<PayloadType<Actions>>
 
 const defaultState = { ...new ReduxState() }
 
@@ -68,7 +66,7 @@ export const reducer = handleActions<ReduxState, any>({
         }),
     [ACTIONS.FILTER_PRODUCTS]: (state, { payload }: Actions['filterProducts']) =>
         produce(state, draft => {
-            const { fieldName, value } = payload
+            const { value } = payload
             draft.checkboxNames[payload.fieldName] = value
         })
 }, defaultState)
