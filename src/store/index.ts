@@ -9,6 +9,7 @@ export const sagaMiddleware = createSagaMiddleware()
 const middleWares = applyMiddleware(sagaMiddleware)
 
 export const configureStore = () => {
+
     return createStore(
         reducer, composeWithDevTools(middleWares)
     );

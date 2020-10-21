@@ -6,6 +6,6 @@ import { FooterContainerProps } from "./types"
 export const FooterContainer: React.FC<FooterContainerProps> = () => {
 
     return (
-        <FooterComponent></FooterComponent>
+        <FooterComponent />
     )
 }

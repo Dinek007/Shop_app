@@ -1,4 +1,4 @@
-import { Action, ActionFunction1 } from "redux-actions"
+import { ActionFunction1 } from "redux-actions"
 
 export type CategoryData = {
   name: string;
@@ -15,12 +15,12 @@ export type Products = Array<
   {
     name: string;
     condition: 'NEW' | 'USED' | 'EX-DISPLAY';
-    imageUrl?: string,
+    imageUrl?: string;
     gender: 'MEN' | 'WOMAN';
   }
->
+>;
 
-export type CheckboxNames = Record<'WOMAN' | 'MEN' | 'NEW' | 'USED' | 'EX-DISPLAY', boolean>
+export type CheckboxNames = Record<'WOMAN' | 'MEN' | 'NEW' | 'USED' | 'EX-DISPLAY', boolean>;
 
 export type FilterProductsPayload = {
   value: boolean;
@@ -36,5 +36,5 @@ export type ActionsType<Actions extends ActionsBasicType> = {
 }
 
 export type PayloadType<actions extends ActionsType<ActionsBasicType>> =
-  actions[keyof actions]['payload']
+  actions[keyof actions]['payload'];
 

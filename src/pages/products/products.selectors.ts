@@ -6,6 +6,7 @@ const getValues = <ChosenCheckboxGroup extends keyof CheckboxNames>(
     checkboxes: CheckboxNames,
     keys: Array<ChosenCheckboxGroup>
 ) => {
+
     return keys.filter((checkboxName: ChosenCheckboxGroup) => {
         const checkboxValue = checkboxes[checkboxName]
         if (checkboxValue) {
@@ -19,7 +20,7 @@ export const selectFilteredProducts = (({ checkboxNames, products }: ReduxState)
         gender: getValues(checkboxNames, ['MEN', 'WOMAN']),
         condition: getValues(checkboxNames, ['EX-DISPLAY', 'NEW', 'USED'])
     }
-    const chosenDataProperties = Object.keys(chosenData) // array of names of filter's categories
+    const chosenDataProperties = Object.keys(chosenData)
 
     const filteredProducts = products.data.filter((product) => {
         const shouldShowProduct = chosenDataProperties.filter(checkboxName => {

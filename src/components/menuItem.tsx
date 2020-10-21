@@ -1,9 +1,9 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import { useHistory } from "react-router-dom";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import { useHistory } from "react-router-dom"
 
-import { MenuItemProps } from "./types";
+import { MenuItemProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {

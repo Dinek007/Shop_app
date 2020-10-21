@@ -1,8 +1,8 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 
-import { HomeComponentProps } from "./types";
+import { HomeComponentProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     homePic: {

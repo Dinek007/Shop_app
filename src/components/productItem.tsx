@@ -1,9 +1,9 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Typography from "@material-ui/core/Typography";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import Typography from "@material-ui/core/Typography"
 
 import { CartButtonItem } from "./cartButtonItem"
-import { ProductItemProps } from "./types";
+import { ProductItemProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     item: {
@@ -19,7 +19,6 @@ const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
             height: "500px",
         },
         [breakpoints.down('xs')]: {
-
             width: "200px",
             margin: "20px",
             height: "400px",

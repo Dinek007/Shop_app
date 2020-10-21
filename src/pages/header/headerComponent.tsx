@@ -1,11 +1,11 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
-import { Typography } from "@material-ui/core";
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import HomeIcon from '@material-ui/icons/Home'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import EmojiNatureIcon from '@material-ui/icons/EmojiNature'
+import { Typography } from "@material-ui/core"
 
-import { HeaderComponentProps } from "./types";
+import { HeaderComponentProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles({
     header: {

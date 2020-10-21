@@ -1,4 +1,4 @@
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core"
 
 export const colors = {
   dark: '#aaaaaa',

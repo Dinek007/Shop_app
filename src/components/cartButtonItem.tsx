@@ -1,10 +1,10 @@
 import React from "react"
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Button from '@material-ui/core/Button';
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import Button from '@material-ui/core/Button'
 
-import { Products } from "../store/types";
-import { CartItemProps } from "./types";
+import { Products } from "../store/types"
+import { CartItemProps } from "./types"
 
 const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     iconCart: {
@@ -30,7 +30,6 @@ export const CartButtonItem: React.FC<CartItemProps> = (item) => {
 
         const newArray = [...itemsArray, item]
         localStorage.setItem("items", JSON.stringify(newArray))
-        console.log(newArray)
     }
 
     return (

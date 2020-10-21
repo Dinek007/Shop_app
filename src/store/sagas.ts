@@ -3,17 +3,14 @@ import ReduxSagaFirebase from 'redux-saga-firebase'
 
 import { ACTIONS } from './consts'
 import { actions, Actions } from './actions'
-import firebase from 'firebase/app'
 import { firebaseApp } from '../firebase'
-import { CategoryData, Categories, Products } from './types'
+import { Categories, Products } from './types'
 
 const reduxSagaFirebase = new ReduxSagaFirebase(firebaseApp)
 
 export function* fetchCategoriesDataSaga({ payload }: Actions['fetchCategoriesData']) {
   const categoriesDataSnapshot = yield call(reduxSagaFirebase.firestore.getCollection, 'categories')
 
-  const storage = firebase.storage()
-  console.log(storage)
   let categoriesData: Categories = []
 
   categoriesDataSnapshot.forEach(element => {
@@ -37,8 +34,6 @@ export function* fetchProductsSaga({ payload }: Actions['fetchProducts']) {
   productsDataSnapshot.forEach(element => {
     productsData = element.data().data
   })
-
-  console.log(productsData, payload)
 
   const filterProducts = productsData.filter((item) => payload.id === item.categoryId) || []
   let data: Products = []
