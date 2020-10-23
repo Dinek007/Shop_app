@@ -61,7 +61,6 @@ export const reducer = handleActions<ReduxState, any>({
         }),
     [ACTIONS.SET_CHOSEN_CATEGORY]: (state, { payload }: Actions['setChosenCategory']) =>
         produce(state, draft => {
-            console.log(payload)
             draft.chosenCategory = payload
         }),
     [ACTIONS.FILTER_PRODUCTS]: (state, { payload }: Actions['filterProducts']) =>
