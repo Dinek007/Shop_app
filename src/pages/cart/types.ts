@@ -1,5 +1,7 @@
+import { Products } from "../../store/types"
+
 export type CartComponentProps = {
-    data: any;
+    data: Products;
 }
 
 export type CartContainerProps = {}

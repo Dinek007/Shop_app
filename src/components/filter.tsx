@@ -22,6 +22,7 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         },
         [breakpoints.down('sm')]: {
             marginTop: spacing(0),
+            position: "absolute",
         },
         [breakpoints.down('xs')]: {
             position: "absolute",

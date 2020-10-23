@@ -44,7 +44,7 @@ export const MenuContainer: React.FC<MenuContainerProps> = () => {
     const fetchCategory = useFetchProducts()
 
     useEffect(() => {
-        dispatch(actions.fetchCategoriesData(123))
+        dispatch(actions.fetchCategoriesData())
     }, [])
 
     const data = useSelector((store: ReduxState) => store.categories.data)
