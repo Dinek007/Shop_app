@@ -17,13 +17,19 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => createStyles
         flexWrap: "wrap",
         width: "70vw",
         marginBottom: spacing(7),
+        [breakpoints.down('md')]: {
+
+            left: "50px",
+        },
         [breakpoints.down('sm')]: {
             marginTop: "230px",
             left: "-8px",
+            marginLeft: "50px"
         },
         [breakpoints.down('xs')]: {
             marginTop: "330px",
             left: "0px",
+            marginLeft: "0px"
         },
     }
 }));
