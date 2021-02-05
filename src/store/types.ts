@@ -35,6 +35,3 @@ export type ActionsType<Actions extends ActionsBasicType> = {
   [k in keyof Actions]: ReturnType<Actions[k]>;
 }
 
-export type PayloadType<actions extends ActionsType<ActionsBasicType>> =
-  actions[keyof actions]['payload'];
-
